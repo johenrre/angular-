@@ -1,0 +1,31 @@
+<div>
+  <ngx-datatable
+    [rows]="rows"
+    [columns]="columns">
+  </ngx-datatable>
+</div>
+
+
+<h4>Middle size table</h4>
+<nz-table
+  #middleTable
+  nzSize="middle"
+  [nzTotal]="total"
+  [nzFrontPagination]="false"
+  [nzLoading]="loading"
+  [nzData]="data">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Address</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of middleTable.data">
+      <td>{{data.name}}</td>
+      <td>{{data.age}}</td>
+      <td>{{data.address}}</td>
+    </tr>
+  </tbody>
+</nz-table>

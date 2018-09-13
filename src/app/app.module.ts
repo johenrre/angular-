@@ -21,6 +21,7 @@ import { ModalComponent } from './modal/modal.component';
 import { UniqueAlterEgoValidatorDirective } from './input/alter-ego.directive';
 import { ChartsComponent } from './charts/charts.component';
 import { LineChartModule } from '@swimlane/ngx-charts';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
 
 import { ChartsModule } from './charts/charts.module';
@@ -28,7 +29,7 @@ import { ChartsModule } from './charts/charts.module';
 import { NgxEchartsModule } from 'ngx-echarts';
 import { DirectiveTestComponent } from './directive-test/directive-test.component';
 import {GreetDirective} from './directive-test/geek.directive';
-
+import { TableComponent } from './table/table.component';
 
 registerLocaleData(zh);
 
@@ -46,6 +47,7 @@ registerLocaleData(zh);
     ChartsComponent,
     DirectiveTestComponent,
     GreetDirective,
+    TableComponent,
   ],
   imports: [
     BrowserModule,
@@ -58,6 +60,7 @@ registerLocaleData(zh);
     NgxEchartsModule,
     ChartsModule,
     LineChartModule,
+    NgxDatatableModule,
   ],
   providers: [{ provide: NZ_I18N, useValue: zh_CN }],
   bootstrap: [AppComponent]
