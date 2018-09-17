@@ -30,6 +30,7 @@ import { NgxEchartsModule } from 'ngx-echarts';
 import { DirectiveTestComponent } from './directive-test/directive-test.component';
 import {GreetDirective} from './directive-test/geek.directive';
 import { TableComponent } from './table/table.component';
+import { LayoutComponent } from './layout/layout.component';
 
 registerLocaleData(zh);
 
@@ -48,6 +49,7 @@ registerLocaleData(zh);
     DirectiveTestComponent,
     GreetDirective,
     TableComponent,
+    LayoutComponent,
   ],
   imports: [
     BrowserModule,

@@ -9,6 +9,7 @@ import { TimePickerComponent } from '../time-picker/time-picker.component';
 import { ModalComponent } from '../modal/modal.component';
 import { ChartsComponent } from '../charts/charts.component';
 import { TableComponent } from '../table/table.component';
+import { LayoutComponent } from '../layout/layout.component';
 import { DirectiveTestComponent } from '../directive-test/directive-test.component';
 
 const routes: Routes = [
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'chart', component: ChartsComponent },
   { path: 'directive', component: DirectiveTestComponent },
   { path: 'table', component: TableComponent },
+  { path: 'layout', component: LayoutComponent },
   { path: '', redirectTo: '/inputDemo', pathMatch: 'full' },
 ];
 
