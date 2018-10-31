@@ -7,8 +7,8 @@ import { Component } from '@angular/core';
 })
 export class NumInputComponent {
   demoValue = 100;
-  formatterPercent = value => `${value} %`;
-  parserPercent = value => value.replace(' %', '');
-  formatterDollar = value => `$ ${value}`;
-  parserDollar = value => value.replace('$ ', '');
+  formatterPercent = (value: any) => `${value} %`;
+  parserPercent = (value: any) => value.replace(' %', '');
+  formatterDollar = (value: any) => `$ ${value}`;
+  parserDollar = (value: any) => value.replace('$ ', '');
 }

@@ -14,7 +14,7 @@ export class GreetDirective {
   attr!: any;
 
   @HostListener('click', ['$event'])
-    onClick(event) {
+    onClick(event: any) {
       // 这个onClick名字竟然是任意的， 应该是判断跟HostListener 最近的一个函数。
       this.greet = 'clicked!';
     }

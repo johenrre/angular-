@@ -28,7 +28,7 @@ import { ChartsModule } from './charts/charts.module';
 
 import { NgxEchartsModule } from 'ngx-echarts';
 import { DirectiveTestComponent } from './directive-test/directive-test.component';
-import {GreetDirective} from './directive-test/geek.directive';
+import { GreetDirective } from './directive-test/geek.directive';
 import { TableComponent } from './table/table.component';
 import { LayoutComponent } from './layout/layout.component';
 

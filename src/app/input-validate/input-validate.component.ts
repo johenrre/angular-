@@ -17,7 +17,7 @@ import { Observable, Observer } from 'rxjs';
 })
 export class InputValidateComponent {
   validateForm: FormGroup;
-  submitForm = ($event, value) => {
+  submitForm = ($event:any, value: any) => {
     $event.preventDefault();
     // tslint:disable-next-line:forin
     for (const key in this.validateForm.controls) {
