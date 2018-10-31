@@ -1,0 +1,31 @@
+.background {
+  position: relative;
+  height: 100vh;
+  background-image: url(../../assets/images/login.jpg);
+  background-size: cover;
+  background-position: center center;
+}
+
+.login-box {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  .title {
+    margin-bottom: 1em;
+    text-align: center;
+    font-size: 28px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    color: #666;
+  }
+}
+
+.login-form {
+  width: 300px;
+}
+
+.login-form-button {
+  width: 100%;
+}
