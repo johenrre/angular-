@@ -1,24 +1,3 @@
-
-<form [formGroup]="heroForm" #formDir="ngForm">
-  <!-- <div class="form-group">
-    <label for="alterEgo">Alter Ego</label>
-    <input id="alterEgo" class="form-control"
-        formControlName="alterEgo"  >
-
-    <div *ngIf="alterEgo.pending">Validating...</div>
-    <div *ngIf="alterEgo.invalid" class="alert alert-danger alter-ego-errors">
-      <div *ngIf="alterEgo.errors?.uniqueAlterEgo">
-        Alter ego is already taken.
-      </div>
-    </div>
-  </div> -->
-  <nz-form-item>
-    <nz-form-label [nzSpan]="5">Validating</nz-form-label>
-    <nz-form-control [nzSpan]="12" nzHasFeedback>
-      <input nz-input formControlName="alterEgo">
-      <nz-form-explain *ngIf="alterEgo.errors?.uniqueAlterEgo">用户名被使用</nz-form-explain>
-    </nz-form-control>
-  </nz-form-item>
-</form>
-
-<button (click)="trigger()">trigger</button>
+<p>
+  input works!
+</p>
