@@ -37,6 +37,10 @@ export class CurrentUserService {
     );
   }
 
+  changePassword(params: any) {
+    return this.http.patch(`api/users/self/password`, params);
+  }
+
   logout() {
     this.jwtService.clear();
     this.redirectToLoginPage();
