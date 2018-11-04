@@ -28,23 +28,26 @@ export class LoginComponent {
     checkForm(this.loginForm);
 
     if (this.loginForm.invalid) return;
-    this.userService
-      .login(this.loginForm.value)
-      .pipe(
-        catchError((err: HttpErrorResponse) => {
-          if (err instanceof ErrorEvent) {
-            this.message.error('网络错误，请检查网络是否正常');
-          } else if (err.status < 500) {
-            this.message.error('用户名或密码错误');
-          } else {
-            this.message.error('登录异常，请稍后再试');
-          }
+    // 这里简单使用没有
+    this.userService.login(this.loginForm.value);
+    this.userService.redirect();
+    // this.userService
+    //   .login(this.loginForm.value)
+    //   .pipe(
+    //     catchError((err: HttpErrorResponse) => {
+    //       if (err instanceof ErrorEvent) {
+    //         this.message.error('网络错误，请检查网络是否正常');
+    //       } else if (err.status < 500) {
+    //         this.message.error('用户名或密码错误');
+    //       } else {
+    //         this.message.error('登录异常，请稍后再试');
+    //       }
 
-          return throwError(err);
-        }),
-      )
-      .subscribe(() => {
-        this.userService.redirect();
-      });
+    //       return throwError(err);
+    //     }),
+    //   )
+    //   .subscribe(() => {
+    //     this.userService.redirect();
+    //   });
   }
 }

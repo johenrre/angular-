@@ -23,11 +23,11 @@
     "@swimlane/ngx-charts": "^9.0.0",
     "@swimlane/ngx-datatable": "^13.1.0",
     "core-js": "^2.5.4",
+    "echarts": "^4.1.0",
     "jwt-decode": "^2.2.0",
     "lodash": "^4.17.11",
     "moment": "^2.22.2",
-    "echarts": "^4.1.0",
-    "ng-zorro-antd": "^1.4.0",
+    "ng-zorro-antd": "^1.7.1",
     "ngx-echarts": "^4.0.0",
     "rxjs": "^6.0.0",
     "zone.js": "~0.8.26"

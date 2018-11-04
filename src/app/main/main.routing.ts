@@ -10,21 +10,16 @@ const routes: Routes = [
     canActivate: [MainGuard],
     component: MainLayoutComponent,
     children: [
-      {
-        path: '',
-        pathMatch: 'full',
-        redirectTo: 'all-user-manage',
-      },
-      {
-        path: '',
-        children: [
-          {
-            path: 'parameter-settings',
-            loadChildren:
-              './parameter-settings/parameter-settings.module#ParameterSettingsModule',
-          },
-        ],
-      },
+      // {
+      //   path: '',
+      //   pathMatch: 'full',
+      //   redirectTo: '',
+      // },
+      // {
+      //   path: '',
+      //   children: [
+      //   ],
+      // },
     ],
   },
 ];

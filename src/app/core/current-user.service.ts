@@ -30,11 +30,12 @@ export class CurrentUserService {
   }
 
   login(info: AuthInfo) {
-    return this.jwtService.fetch(info).pipe(
-      tap(data => {
-        this.jwtService.create(data.token);
-      }),
-    );
+    this.jwtService.create(info.password);
+    // return this.jwtService.fetch(info).pipe(
+    //   tap(data => {
+    //     this.jwtService.create(data.token);
+    //   }),
+    // );
   }
 
   changePassword(params: any) {

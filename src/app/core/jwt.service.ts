@@ -20,7 +20,8 @@ export class JWTService {
     return this._jwt;
   }
 
-  private _payload?: Payload;
+  // private _payload?: Payload;
+  private _payload?: any;
 
   get payload() {
     return this._payload;
@@ -35,21 +36,33 @@ export class JWTService {
     return !!this._payload;
   }
 
+  // constructor(private http: HttpClient) {
+  //   const jwt = this.getFromLocalStorage();
+  //   const success = this.init(jwt);
+
+  //   if (!success) this.clear();
+  // }
+
   constructor(private http: HttpClient) {
     const jwt = this.getFromLocalStorage();
-    const success = this.init(jwt);
-
-    if (!success) this.clear();
+    this._payload = jwt;
   }
 
   fetch(info: AuthInfo) {
     return this.http.post<GetJWTResponse>('api/token', info);
   }
 
+  // create(jwt: string) {
+  //   const success = this.init(jwt);
+  //   if (!success) return false;
+  //   this.save(jwt);
+  //   return true;
+  // }
+
   create(jwt: string) {
-    const success = this.init(jwt);
-    if (!success) return false;
+    // 干掉原来走服务器
     this.save(jwt);
+    this._payload = jwt;
     return true;
   }
 
