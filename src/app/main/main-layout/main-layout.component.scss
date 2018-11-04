@@ -1,3 +1,5 @@
+@import '~@angular/material/theming';
+
 :host ::ng-deep .brand {
   position: relative;
   font-size: 20px;
@@ -5,9 +7,13 @@
   text-align: center;
   color: #fff;
   background-color: lighten($color: #001529, $amount: 4.5);
+
+  @include mat-elevation(2);
 }
 
 nz-header {
+  @include mat-elevation(2);
+
   z-index: 999;
 
   .dropdown-trigger {
@@ -21,6 +27,8 @@ nz-header {
 }
 
 nz-sider {
+  @include mat-elevation(4);
+
   [nz-menu-item]:focus {
     outline: none;
   }

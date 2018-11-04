@@ -17,7 +17,13 @@ registerLocaleData(zh);
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRouting, CoreModule, LoginModule, MainModule],
+  imports: [
+    BrowserModule,
+    AppRouting,
+    CoreModule,
+    LoginModule,
+    MainModule,
+  ],
   providers: [{ provide: NZ_I18N, useValue: zh_CN }],
   bootstrap: [AppComponent],
 })

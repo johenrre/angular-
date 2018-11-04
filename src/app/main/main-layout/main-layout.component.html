@@ -1,171 +1,9 @@
 <nz-layout style="height: 100%;">
-  <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="triggerTemplate" [nzCollapsedWidth]="0" [nzBreakpoint]="'lg'" [nzWidth]="256">
+  <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="" [nzCollapsedWidth]="0" [nzBreakpoint]="'lg'"triggerTemplate [nzWidth]="256">
     <nz-header class="brand">
       后台管理系统
     </nz-header>
-    <ul nz-menu [nzTheme]="'dark'" [nzMode]="'inline'" [nzInlineCollapsed]="isCollapsed">
-      <li nz-submenu nzOpen>
-        <span title>游戏管理</span>
-        <ul>
-          <li nz-menu-item routerLink="/online-user" routerLinkActive="ant-menu-item-selected">
-            <span>在线玩家管理</span>
-          </li>
-          <li nz-menu-item routerLink="/all-user-manage" routerLinkActive="ant-menu-item-selected">
-            <span>所有玩家管理</span>
-          </li>
-          <li nz-menu-item routerLink="/game-config" routerLinkActive="ant-menu-item-selected">
-            <span>
-              <span>游戏配置管理</span>
-            </span>
-          </li>
-          <li nz-menu-item routerLink="/weixin-config" routerLinkActive="ant-menu-item-selected">
-            <span>
-              <span>充值接口管理</span>
-            </span>
-          </li>
-          <li nz-submenu>
-            <span title>游戏参数设置</span>
-            <ul>
-              <li nz-menu-item routerLink="/rtp-settings/bjl" routerLinkActive="ant-menu-item-selected">
-                <span>
-                  <span>百家乐参数设置</span>
-                </span>
-              </li>
-              <li nz-menu-item routerLink="/rtp-settings/niuniu" routerLinkActive="ant-menu-item-selected">
-                <span>
-                  <span>牛牛参数设置</span>
-                </span>
-              </li>
-              <li nz-menu-item routerLinkActive="ant-menu-item-selected">
-                <span>
-                  <span>炸金花参数设置</span>
-                </span>
-              </li>
-              <li nz-menu-item routerLinkActive="ant-menu-item-selected">
-                <span>
-                  <span>捕鱼参数设置</span>
-                </span>
-              </li>
-              <li nz-menu-item routerLinkActive="ant-menu-item-selected">
-                <span>
-                  <span>红黑参数设置</span>
-                </span>
-              </li>
-              <li nz-menu-item routerLinkActive="ant-menu-item-selected">
-                <span>
-                  <span>龙虎参数设置</span>
-                </span>
-              </li>
-              <li nz-menu-item routerLinkActive="ant-menu-item-selected">
-                <span>
-                  <span>奔驰宝马参数设置</span>
-                </span>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-      <li nz-submenu>
-        <span title>报表系统</span>
-        <ul>
-          <li nz-menu-item routerLink="/game-total-report" routerLinkActive="ant-menu-item-selected">
-            <span>游戏总表</span>
-          </li>
-          <li nz-menu-item routerLink="/registered-user" routerLinkActive="ant-menu-item-selected">
-            <span>用户报表管理</span>
-          </li>
-          <li nz-menu-item routerLinkActive="ant-menu-item-selected">
-            <span>用户充值报表</span>
-          </li>
-          <li nz-menu-item routerLinkActive="ant-menu-item-selected">
-            <span>用户盈亏统计</span>
-          </li>
-          <li nz-menu-item routerLinkActive="ant-menu-item-selected">
-            <span>用户提现统计</span>
-          </li>
-          <li nz-menu-item routerLinkActive="ant-menu-item-selected">
-            <span>游戏盈亏统计</span>
-          </li>
-          <li nz-menu-item routerLinkActive="ant-menu-item-selected">
-            <span>游戏代理统计</span>
-          </li>
-          <li nz-menu-item routerLinkActive="ant-menu-item-selected">
-            <span>留存分析</span>
-          </li>
-        </ul>
-      </li>
-      <li nz-submenu>
-        <span title>提现管理</span>
-        <ul>
-          <li nz-menu-item routerLink="/transfer-order/withdrawal-audit" routerLinkActive="ant-menu-item-selected">
-            <span>提现审核表单</span>
-          </li>
-          <li nz-menu-item routerLink="/transfer-order/transfer-audit" routerLinkActive="ant-menu-item-selected">
-            <span>人工转账表单</span>
-          </li>
-          <li nz-menu-item routerLink="/transfer-order/withdrawal-report" routerLinkActive="ant-menu-item-selected">
-            <span>提现报表</span>
-          </li>
-          <li nz-menu-item routerLinkActive="ant-menu-item-selected">
-            <span>提现审计</span>
-          </li>
-        </ul>
-      </li>
-      <li nz-menu-item routerLinkActive="ant-menu-item-selected">
-        <span>风控管理</span>
-      </li>
-      <li nz-submenu>
-        <span title>权限管理</span>
-        <ul>
-          <li nz-menu-item routerLink="/power-manage/user" routerLinkActive="ant-menu-item-selected">
-            <span>
-              <span>用户管理</span>
-            </span>
-          </li>
-          <li nz-menu-item routerLink="/power-manage/role" routerLinkActive="ant-menu-item-selected">
-            <span>
-              <span>角色管理</span>
-            </span>
-          </li>
-          <li nz-menu-item routerLink="/power-manage/power" routerLinkActive="ant-menu-item-selected">
-            <span>
-              <span>权限管理</span>
-            </span>
-          </li>
-        </ul>
-      </li>
-      <!-- 旧的菜单 -->
-      <li nz-submenu>
-        <span title>玩家管理（遗留）</span>
-        <ul>
-          <li nz-menu-item routerLink="/user-manage/blackUser" routerLinkActive="ant-menu-item-selected">
-            <span>
-              <span>添加黑名单</span>
-            </span>
-          </li>
-          <li nz-menu-item routerLink="/user-manage/sendEmail" routerLinkActive="ant-menu-item-selected">
-            <span>
-              <span>发送邮件</span>
-            </span>
-          </li>
-          <li nz-submenu>
-            <span title>游戏设置</span>
-            <ul>
-              <li nz-submenu>
-                <span title>系统参数管理</span>
-                <ul>
-                  <li nz-menu-item routerLink="/parameter-settings/bjl" routerLinkActive="ant-menu-item-selected">
-                    <span>
-                      <span>百家乐</span>
-                    </span>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-    </ul>
+    <app-menus [isCollapsed]="isCollapsed"></app-menus>
   </nz-sider>
   <nz-layout>
     <nz-header fxLayout="row" style="background: #fff; padding: 0;">
@@ -192,15 +30,17 @@
       <nz-content>
         <router-outlet></router-outlet>
         <nz-footer style="text-align: center;">
-          版本号 v18.0.0.0
+            ©2018 By johenrre
         </nz-footer>
       </nz-content>
     </nz-layout>
   </nz-layout>
 </nz-layout>
+
 <ng-template #trigger>
   <i nz-icon [type]="'menu-fold'" theme="outline"></i>
 </ng-template>
+
 <nz-modal [nzVisible]="isvisibleEditor" [nzMaskClosable]="false" nzTitle="修改密码" [nzMaskClosable]="true" (nzOnCancel)="onHideEditor()" (nzOnOk)="onQueryEditor()">
   <form [formGroup]="formEditor" nz-form>
     <nz-form-item>
