@@ -10,16 +10,31 @@ const routes: Routes = [
     canActivate: [MainGuard],
     component: MainLayoutComponent,
     children: [
-      // {
-      //   path: '',
-      //   pathMatch: 'full',
-      //   redirectTo: '',
-      // },
-      // {
-      //   path: '',
-      //   children: [
-      //   ],
-      // },
+      {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: 'table',
+      },
+      {
+        path: '',
+        children: [
+          // {
+          //   path: 'form',
+          //   loadChildren:
+          //     './form/form.module#FormModule',
+          // },
+          {
+            path: 'table',
+            loadChildren:
+              './table/table.module#TableModule',
+          },
+          // {
+          //   path: 'chart',
+          //   loadChildren:
+          //     './chart/chart.module#ChartModule',
+          // },
+        ],
+      },
     ],
   },
 ];

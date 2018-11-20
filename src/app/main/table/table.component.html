@@ -1,0 +1,137 @@
+<nz-card>
+  <form nz-form [formGroup]="form">
+
+    <div nz-row nzGutter="24">
+      <div nz-col nzSpan="6">
+        <nz-form-item nzFlex>
+          <nz-form-label nzSpan="10">用户ID</nz-form-label>
+          <nz-form-control nzSpan="14">
+            <input nz-input formControlName="playerId" placeholder="全部" />
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+
+      <div nz-col nzSpan="6">
+        <nz-form-item nzFlex>
+          <nz-form-label nzSpan="10">审核状态</nz-form-label>
+          <nz-form-control nzSpan="14">
+            <nz-select
+              style="width: 100%;"
+              formControlName="auditedStatus"
+              nzAllowClear
+            >
+              <nz-option [nzValue]="0" nzLabel="待审核"></nz-option>
+              <nz-option [nzValue]="1" nzLabel="审核通过"></nz-option>
+              <nz-option [nzValue]="2" nzLabel="审核拒绝"></nz-option>
+              <nz-option [nzValue]="3" nzLabel="提现金额冻结"></nz-option>
+            </nz-select>
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+
+      <div nz-col nzSpan="6">
+        <nz-form-item nzFlex>
+          <nz-form-label nzSpan="6" nzRequired>提现时间</nz-form-label>
+          <nz-form-control nzSpan="14">
+            <nz-range-picker
+              formControlName="dateTimeRange"
+              [nzShowTime]="{ nzFormat: 'HH:mm' }"
+              nzFormat="yyyy-MM-dd HH:mm"
+              [nzPlaceHolder]="['开始时间', '结束时间']"
+            ></nz-range-picker>
+            <ng-container *ngIf="form.get('dateTimeRange')!.dirty">
+              <ng-container *ngIf="form.get('dateTimeRange')!.errors as errors">
+                <nz-form-explain *ngIf="errors.required"
+                  >不能为空</nz-form-explain
+                >
+              </ng-container>
+            </ng-container>
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+    </div>
+    <div nz-row>
+      <div nz-col [nzSpan]="24" style="text-align: right;">
+        <button nz-button nzType="primary" type="submit" (click)="getData()">
+          <i nz-icon type="search" theme="outline"></i>查询
+        </button>
+        <button nz-button type="button" (click)="onReset()">重置</button>
+      </div>
+    </div>
+  </form>
+</nz-card>
+
+<ng-template #exportTemplate>
+  <button nz-button nzType="primary" (click)="onExport()">导出</button>
+</ng-template>
+
+<nz-card nzTitle="交易订单审核" [nzExtra]="exportTemplate">
+  <nz-table
+    nzSize="small"
+    #totalTable
+    nzBordered
+    nzFrontPagination="false"
+    [nzData]="tableConfig.data"
+    [(nzPageIndex)]="tableConfig.page"
+    [nzTotal]="tableConfig.total"
+    (nzPageIndexChange)="getData()"
+    [nzPageSize]="tableConfig.size"
+    [nzLoading]="isloadingForm"
+  >
+    <thead>
+      <tr>
+        <th nzWidth="120px">申请时间</th>
+        <th nzWidth="120px">昵称</th>
+        <th nzWidth="80px">等级</th>
+        <th nzWidth="80px">金币</th>
+        <th nzWidth="110px">操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of totalTable.data">
+        <td>{{ data.createTime }}</td>
+        <td>{{ data.nick }}</td>
+        <td>{{ data.level }}</td>
+        <td>{{ data.money | yuan }}</td>
+        <td>
+          <a style="margin-right: 10px" (click)="onClickEdite()">修改</a>
+          <a (click)="onClickAdd()">添加</a>
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>
+</nz-card>
+
+<!-- 审核用户订单 -->
+<nz-modal
+  [nzVisible]="isvisibleModal"
+  [nzMaskClosable]="false"
+  nzTitle="修改"
+  [nzMaskClosable]="true"
+  (nzOnCancel)="onHideModal()"
+  (nzOnOk)="onHideModal()"
+>
+  <form [formGroup]="formEdite" nz-form>
+    <nz-form-item>
+      <nz-form-label nzSpan="6">审核状态</nz-form-label>
+      <nz-form-control nzSpan="18">
+        <nz-select
+          style="width: 120px;"
+          formControlName="auditStatus"
+          nzAllowClear
+          nzPlaceHolder="选择审核状态"
+        >
+          <nz-option [nzValue]="1" nzLabel="审核通过"></nz-option>
+          <nz-option [nzValue]="2" nzLabel="审核拒绝"></nz-option>
+          <nz-option [nzValue]="3" nzLabel="提现金额冻结"></nz-option>
+        </nz-select>
+        <ng-container *ngIf="formEdite.get('auditStatus')!.dirty">
+          <ng-container *ngIf="formEdite.get('auditStatus')!.errors as errors">
+            <nz-form-explain *ngIf="errors.required">不能为空</nz-form-explain>
+          </ng-container>
+        </ng-container>
+      </nz-form-control>
+    </nz-form-item>
+  </form>
+</nz-modal>
+

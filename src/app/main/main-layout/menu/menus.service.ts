@@ -7,9 +7,15 @@ export class MenusService {
   constructor() {}
   _Menus = [
     {
-      text: '首页',
-      link: 'index',
-      icon: 'home',
+      text: '表单',
+      link: 'form',
+      icon: 'form',
+      children: [],
+    },
+    {
+      text: '表格',
+      link: 'table',
+      icon: 'table',
       children: [],
     },
     {
@@ -18,13 +24,17 @@ export class MenusService {
       icon: 'area-chart',
       children: [
         {
-          text: '折线图',
+          text: 'echarts折线图',
           link: 'charts/line',
+          icon: '',
+        },
+        {
+          text: 'ngx折线图',
+          link: 'charts/ngxLine',
           icon: '',
         },
       ],
     },
-
   ];
   menus() {
     return this._Menus;

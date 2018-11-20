@@ -1,0 +1,21 @@
+nz-modal {
+  nz-input-number {
+    width: 200px;
+  }
+
+  textarea {
+    width: 200px;
+  }
+}
+
+form {
+  button {
+    margin-left: 15px;
+  }
+}
+
+nz-table tr {
+  &:nth-child(even) {
+    background-color: transparentize($color: #eee, $amount: 0.8);
+  }
+}
