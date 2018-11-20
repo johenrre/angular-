@@ -3,6 +3,7 @@ import { CurrentUserService } from '~@core/current-user.service';
 
 import { Authority } from '~@interface/authority.interface';
 
+
 @Directive({ selector: '[appAuthority]' })
 export class AuthorityDirective {
   private hasView = false;

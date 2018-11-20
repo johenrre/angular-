@@ -20,7 +20,7 @@ export class TableService {
       createTime: '2018/11/19',
       nick: 'rookie',
       level: '45',
-      money: 100,
+      money: 10000,
       },
     ];
   }
