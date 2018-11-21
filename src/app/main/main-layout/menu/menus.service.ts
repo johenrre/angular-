@@ -8,13 +8,13 @@ export class MenusService {
   _Menus = [
     {
       text: '表单',
-      link: 'form',
+      link: '/form',
       icon: 'form',
       children: [],
     },
     {
       text: '表格',
-      link: 'table',
+      link: '/table',
       icon: 'table',
       children: [],
     },
@@ -25,12 +25,12 @@ export class MenusService {
       children: [
         {
           text: 'echarts折线图',
-          link: 'charts/line',
+          link: '/charts/line',
           icon: '',
         },
         {
           text: 'ngx折线图',
-          link: 'charts/ngxLine',
+          link: '/charts/ngxLine',
           icon: '',
         },
       ],
