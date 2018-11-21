@@ -13,16 +13,16 @@ const routes: Routes = [
       {
         path: '',
         pathMatch: 'full',
-        redirectTo: 'table',
+        redirectTo: 'form',
       },
       {
         path: '',
         children: [
-          // {
-          //   path: 'form',
-          //   loadChildren:
-          //     './form/form.module#FormModule',
-          // },
+          {
+            path: 'form',
+            loadChildren:
+              './form/form.module#FormModule',
+          },
           {
             path: 'table',
             loadChildren:

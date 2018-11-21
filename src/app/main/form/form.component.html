@@ -1,0 +1,50 @@
+<nz-card nzTitle="交叉验证">
+  <form nz-form [formGroup]="formCrossValidate" class="login-form">
+    <div nz-row>
+      <div nz-col nzXs="24" nzSm="24">
+          <nz-form-item>
+            <nz-form-label nzSpan="3">密码</nz-form-label>
+            <nz-form-control nzSpan="14">
+              <input nz-input formControlName="password" (ngModelChange)="updateConfirmValidator()">
+            </nz-form-control>
+          </nz-form-item>
+      </div>
+
+      <div nz-col nzXs="24" nzSm="24">
+        <nz-form-item>
+          <nz-form-label nzSpan="3">密码确认</nz-form-label>
+          <nz-form-control nzSpan="14">
+            <input nz-input formControlName="checkPassword">
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+
+    </div>
+  </form>
+</nz-card>
+
+<nz-card nzTitle="异步验证">
+  <form nz-form [formGroup]="formAsyncValidate" class="login-form">
+    <div nz-row>
+      <div nz-col nzXs="24" nzSm="24">
+          <nz-form-item>
+            <nz-form-label nzSpan="3">用户名</nz-form-label>
+            <nz-form-control nzSpan="14" nzHasFeedback>
+              <input nz-input formControlName="userName" (ngModelChange)="updateConfirmValidator()">
+              <nz-form-explain *ngIf="formAsyncValidate.get('userName').dirty && formAsyncValidate.get('userName').errors || formAsyncValidate.get('userName').pending ">
+                <ng-container *ngIf="formAsyncValidate.get('userName').hasError('required')">
+                  请输入用户名！
+                </ng-container>
+                <ng-container *ngIf="formAsyncValidate.get('userName').hasError('duplicated')">
+                  这个名字已经使用过了！
+                </ng-container>
+                <ng-container *ngIf="formAsyncValidate.get('userName').pending">
+                  验证中......
+                </ng-container>
+              </nz-form-explain>
+            </nz-form-control>
+          </nz-form-item>
+      </div>
+    </div>
+  </form>
+</nz-card>
